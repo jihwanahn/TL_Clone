@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,17 +7,33 @@ using UnityEngine.AI;
 public class Mover : MonoBehaviour
 {
     [SerializeField] Transform target;
-    //private Ray lastRay;
-    
-    void Update()
+    NavMeshAgent agent;
+
+    void Start() 
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    lastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //}    
-        //Debug.DrawRay(lastRay.origin, lastRay.direction * 100, Color.white);
-        GetComponent<NavMeshAgent>().destination = target.position;
-        GetComponent<NavMeshAgent>().stoppingDistance = 5f;
+        agent = GetComponent<NavMeshAgent>();
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            MoveToCursor();
+        }
+        // else if (Input.GetMouseButtonDown(1))
+        // {
+        // }
+    }
+
+    void MoveToCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        //bool hasHit = 
+        if(Physics.Raycast(ray, out hit))        
+        {
+            agent.destination = hit.point;
+            Debug.Log(hit.point.x + " & " + hit.point.y + " & " + hit.point.z);
+        }
+    }
 }
