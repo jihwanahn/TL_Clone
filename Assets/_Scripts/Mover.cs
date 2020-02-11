@@ -6,13 +6,14 @@ using UnityEngine.AI;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    NavMeshAgent agent;
-
-    void Start() 
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
+    //[SerializeField] Transform target;
+    // Ray lastRay;
+    // NavMeshAgent agent;
+    
+    // void Start()
+    // {
+    //     agent = GetComponent<NavMeshAgent>();
+    // }
 
     void Update()
     {
@@ -27,13 +28,16 @@ public class Mover : MonoBehaviour
 
     void MoveToCursor()
     {
+        //lastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Debug.DrawRay(lastRay.origin, lastRay.direction * 100);
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        //bool hasHit = 
-        if(Physics.Raycast(ray, out hit))        
+        bool hasHit = Physics.Raycast(ray, out hit);
+        if(hasHit)        
         {
-            agent.destination = hit.point;
-            Debug.Log(hit.point.x + " & " + hit.point.y + " & " + hit.point.z);
+            GetComponent<NavMeshAgent>().destination = hit.point;
+            //Debug.Log(hit.point.x + " & " + hit.point.y + " & " + hit.point.z);
         }
     }
 }
