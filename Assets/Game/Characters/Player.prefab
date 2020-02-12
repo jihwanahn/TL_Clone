@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5451803263814572855}
   - component: {fileID: 5451803263814572853}
-  - component: {fileID: 4368525259860435338}
+  - component: {fileID: 2361730459338334806}
+  - component: {fileID: 635805727545375816}
   - component: {fileID: 1060322979}
   m_Layer: 0
   m_Name: Player
@@ -73,7 +74,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4368525259860435338
+--- !u!114 &2361730459338334806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10afd6c3216dc684da28af5e04a78775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1060322979
+--- !u!195 &635805727545375816
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +95,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5451803263814572843}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.25
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -107,6 +108,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1060322979
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451803263814572843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 98a117ed6b9c670448f78dc273842a52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &775364333
 PrefabInstance:
   m_ObjectHideFlags: 0
